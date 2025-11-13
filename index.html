@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>TechCon 2025 Event Schedule</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header>
+<!-- ...existing code... -->
+<header class="site-header">
+    <div class="container header-inner">
         <h1>TechCon 2025 Event Schedule</h1>
-        <button id="toggle-theme">Toggle Dark/Light Mode</button>
-    </header>
-    <main>
-        <section id="filter-buttons">
-            <button class="filter-btn" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="Talk">Talks</button>
-            <button class="filter-btn" data-filter="Workshop">Workshops</button>
-        </section>
-        <section id="event-container"></section>
-    </main>
-   
-    <script src="main.js"></script>
+        <div class="controls">
+            <div class="filters" role="tablist" aria-label="Event filters">
+                <button class="filter-btn active" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="Talk">Talks</button>
+                <button class="filter-btn" data-filter="Workshop">Workshops</button>
+            </div>
+            <button id="toggle-theme" aria-pressed="false" class="theme-toggle">Toggle Dark/Light</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section id="event-container" aria-live="polite"></section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <small>&copy; <span id="year"></span> TechCon — All rights reserved.</small>
+    </div>
+</footer>
+
+<script src="main.js" defer></script>
+<!-- ...existing code... -->
 </body>
 </html>
